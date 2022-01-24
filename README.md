@@ -1,9 +1,7 @@
 # Silid Aklatan (Server Side)
-<hr />
 
 ### API Brief Info [initial]: 
 The silidAklatan-API will be collection of books for the Project2 requirement.
-<hr/>
 
 ### API SETTING UP:
 
