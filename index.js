@@ -84,6 +84,6 @@ async function main() {
 main();
 
 /* ------- STARTING SERVER ------- */
-app.listen(8888, () => {
+app.listen(process.env.PORT, () => {
     console.log('let it be done accdg to SERVER!! ha-ha!')
 });
