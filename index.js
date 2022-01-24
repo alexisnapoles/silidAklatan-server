@@ -1,4 +1,4 @@
-/* ------- SETTING UP EXPRESS ------- */
+/* -- ----- SETTING UP EXPRESS ----- -- */
 // -- requiring all necessary dependencies to make API accessable || to basically run the API.
 const express = require('express');
 const cors = require('cors');
