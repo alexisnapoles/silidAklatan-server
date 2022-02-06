@@ -33,6 +33,9 @@ yarn add dotenv
 - 1. [tgc14-mongo-express](https://github.com/kunxin-chor/tgc14-mongo-express);
 - 2. [RESTfulAPIExpressJS](https://github.com/mfikricom/RESTfulAPIExpressJS);
 - 3. [vuejs-crud](https://github.com/leonardogbxv/vuejs-crud);
+- 4. [vue-express-mongodb](https://github.com/xrr2016/vue-express-mongodb);
+- 5. [Node.js-Express-&-MongoDB:Build-a-CRUD-REST-API-Example](https://www.bezkoder.com/node-express-mongodb-crud-rest-api/);
+- 6. [Build-a-REST-API-using-Node.js-Express-and-MongoDB](https://flaviocopes.com/rest-api-express-mongodb/)
 
 ### RESTful API STRUCTURE [ideal/tentative]:
 - database 

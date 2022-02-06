@@ -8,7 +8,7 @@ const {
     deleteBooks } = require('../database/db.js');
 
 // READ
-router.get('/', async(req, res) => {
+router.get('/books', async(req, res) => {
     await getBooks((err, books) => {
         if(err) {
             return console.log(err);
@@ -18,7 +18,7 @@ router.get('/', async(req, res) => {
 });
 
 // CREATE
-router.post('/', async(req, res) => {
+router.post('/books', async(req, res) => {
     try {
         await postBooks({
             title: req.body.title,
@@ -39,7 +39,7 @@ router.post('/', async(req, res) => {
 });
 
 // UPDATE
-router.patch('/patch/:id', async(req, res) => {
+router.patch('/books/:id', async(req, res) => {
     const title = req.body.title;
     const author = req.body.author;
     const summary = req.body.summary;
@@ -68,7 +68,7 @@ router.patch('/patch/:id', async(req, res) => {
 });
 
 // DELETE
-router.delete('/delete/:id', async(req, res) => {
+router.delete('/books/:id', async(req, res) => {
     try {
         await deleteBooks(req.params.id);
         return res.status(200).send({ success: 'Book deleted!' })

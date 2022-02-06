@@ -11,7 +11,7 @@ app.use(cors());
 app.use(urlencoded({ extended: true }));
 
 const router = require('./routes/routes.js');
-app.use('/books', router);
+app.use('/routes', router);
 
 // server start
 const port = process.env.PORT || 5500
