@@ -25,3 +25,21 @@ yarn add cors
 yarn add mongodb
 yarn add dotenv
 ```
+
+### RESTful API STRUCTURE [ideal/tentative]:
+>controllers [this folder will serve as data control for api fetching/parsing]
+    >> books.js 
+    >> authors.js
+>models [this folder is responsible for the data sctucture or the schema for data input]
+    >> schema.js
+>routes [this will serve as the router for respective database api]
+    >> booksRoutes.js
+    >> authorsRoutes.js
+.gitignore
+.gitpod.yml
+index.js
+package.json
+Procfile
+README.md
+yarn.lock
+
