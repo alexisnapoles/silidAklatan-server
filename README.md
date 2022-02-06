@@ -39,11 +39,11 @@ yarn add dotenv
 
 ### RESTful API STRUCTURE [ideal/tentative]:
 - database 
-    -- db.js
+    - db.js
     <!-- >> books.js (WIP - in the future) -->
     <!-- >> authors.js (WIP) -->
 - routes 
-    -- routes.js
+    - routes.js
     <!-- >> booksRoutes.js (WIP - in the future) -->
     <!-- >> authorsRoutes.js (WIP - in the future) -->
 - .gitignore
