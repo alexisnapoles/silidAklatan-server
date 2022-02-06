@@ -1,7 +1,10 @@
 # Silid Aklatan (Server Side)
 
-### API Brief Info [initial]: 
-The silidAklatan-API will be collection of books for the Project2 requirement.
+### SUMMARY: 
+This server-side database will be used for the web application Silid Aklatan which will be a collection of books.
+
+This primarily is a RESTful API and database, developed in Node.js and MongoDB. HTTP methods used for retrieving from and sending data to server are GET, POST, PATCH and DELETE.
+
 
 ### API SETTING UP:
 
@@ -26,20 +29,25 @@ yarn add mongodb
 yarn add dotenv
 ```
 
+### REFERENCES:
+- 1. [tgc14-mongo-express](https://github.com/kunxin-chor/tgc14-mongo-express);
+- 2. [RESTfulAPIExpressJS](https://github.com/mfikricom/RESTfulAPIExpressJS);
+- 3. [vuejs-crud](https://github.com/leonardogbxv/vuejs-crud);
+
 ### RESTful API STRUCTURE [ideal/tentative]:
->controllers [this folder will serve as data control for api fetching/parsing]
-    >> books.js 
-    >> authors.js
->models [this folder is responsible for the data sctucture or the schema for data input]
-    >> booksSchema.js
->routes [this will serve as the router for respective database api]
-    >> booksRoutes.js
-    >> authorsRoutes.js
-.gitignore
-.gitpod.yml
-index.js
-package.json
-Procfile
-README.md
-yarn.lock
+- database 
+    -- db.js
+    <!-- >> books.js (WIP - in the future) -->
+    <!-- >> authors.js (WIP) -->
+- routes 
+    -- routes.js
+    <!-- >> booksRoutes.js (WIP - in the future) -->
+    <!-- >> authorsRoutes.js (WIP - in the future) -->
+- .gitignore
+- .gitpod.yml
+- index.js // file for server
+- package.json
+- Procfile
+- README.md
+- yarn.lock
 
