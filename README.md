@@ -31,7 +31,7 @@ yarn add dotenv
     >> books.js 
     >> authors.js
 >models [this folder is responsible for the data sctucture or the schema for data input]
-    >> schema.js
+    >> booksSchema.js
 >routes [this will serve as the router for respective database api]
     >> booksRoutes.js
     >> authorsRoutes.js
