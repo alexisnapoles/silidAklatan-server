@@ -1,20 +1,23 @@
-/* SERVER */
-// requiring all necessary dependencies to make API accessable 
-// to basically run the API.
-const express = require('express');
-const cors = require('cors');
-const {urlencoded} = require('express');
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const books = require("./routes/books.js");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(urlencoded({ extended: true }));
 
-const router = require('./routes/routes.js');
-app.use('/routes', router);
+const uri = process.env.MONGO_URI;
+mongoose.connect(uri, 
+    {
+    useUnifiedTopology: true
+    }
+);
 
-// server start
-const port = process.env.PORT || 5500
-app.listen(port, () => {
-    console.log('let it be done according to SERVER!! ha-ha!')
+app.use(books);
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`server OK! port: ${PORT}`)
 });
