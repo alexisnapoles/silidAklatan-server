@@ -13,6 +13,15 @@ app.get("/books", async function(req, res) {
         res.status(500).send(e);
     }
 });
+app.get("/books/:id", async function(req, res) {
+    const books = await bookModel.findById(req.params.id).exec();
+
+    try {
+        res.send(books);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+});
 
 app.post("/books", async function(req, res) {
     const books = new bookModel(req.body);
