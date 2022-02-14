@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose =require("mongoose")
 const { ObjectId } = require("mongodb");
 const bookModel = require("../models/book");
 
@@ -74,5 +73,6 @@ app.delete("/books/:id", async function(req, res) {
         res.status(500).send(e);
     }
 });
+
 
 module.exports = app;
