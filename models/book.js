@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-require('mongoose-type-url')
-const {ObjectId} = require('mongodb');
+require('mongoose-type-url');
+const {Schema} = mongoose;
 
 const BookSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     imageUrl: {
         type: mongoose.SchemaTypes.Url, required: true
     },
