@@ -1,5 +1,6 @@
 const express = require("express");
-const { send } = require("express/lib/response");
+const mongoose =require("mongoose")
+const { ObjectId } = require("mongodb");
 const bookModel = require("../models/book");
 
 const app = express();
@@ -13,6 +14,7 @@ app.get("/books", async function(req, res) {
         res.status(500).send(e);
     }
 });
+
 app.get("/books/:id", async function(req, res) {
     const books = await bookModel.findById(req.params.id).exec();
 
@@ -34,13 +36,31 @@ app.post("/books", async function(req, res) {
     }
 });
 
-app.patch("/books/:id", async function(req, res) {
-    try {
-        await bookModel.findByIdAndUpdate(req.params.id, req.body);
-        await bookModel.save();
-    } catch (e) {
-        res.status(500).send(e);
+app.patch("/books/:id", async function(req, res, next) {
+    const query = {
+        imageUrl: req.body.imageUrl,
+        title: req.body.title,
+        author: req.body.author,
+        summary: req.body.summary,
+        genre: req.body.genre,
+        yearPublished: req.body.yearPublished,
+        publisher: req.body.publisher,
+        isbn13: req.body.isbn13,
+        ratings: req.body.ratings
     }
+
+    try {
+        const books = await bookModel.findByIdAndUpdate(req.params.id, query, {
+            new: true
+        });
+        // console.log("updated book", books)
+        await bookModel.save();
+        return res.status(200).send(books)
+        // return res.json(books) 
+    } catch (error) {
+        res.status(500).send(error)
+    }
+    
 });
 
 app.delete("/books/:id", async function(req, res) {
@@ -49,7 +69,7 @@ app.delete("/books/:id", async function(req, res) {
 
         if (!books)
         res.status(404).send("No item found");
-        res.status(200).send();
+        res.status(200).send('Book deleted');
     } catch (e) {
         res.status(500).send(e);
     }
